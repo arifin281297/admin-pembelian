@@ -1,0 +1,36 @@
+<%- include('partials/header') %>
+<%- include('partials/sidebar') %>
+
+<div class="ml-64 p-8 w-full">
+
+    <h1 class="text-3xl font-bold mb-6">Data Produk</h1>
+
+    <div class="bg-white p-6 rounded-xl shadow">
+
+        <table class="w-full border">
+            <thead>
+                <tr class="bg-gray-100">
+                    <th class="p-2 border">Kode</th>
+                    <th class="p-2 border">Nama</th>
+                    <th class="p-2 border">Harga</th>
+                    <th class="p-2 border">Stock</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% products.forEach(p => { %>
+                <tr class="text-center">
+                    <td class="border p-2"><%= p.kode_produk %></td>
+                    <td class="border p-2"><%= p.nama_produk %></td>
+                    <td class="border p-2"><%= p.harga %></td>
+                    <td class="border p-2"><%= p.qty %></td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+
+<%- include('partials/footer') %>

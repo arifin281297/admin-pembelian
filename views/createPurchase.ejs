@@ -1,0 +1,66 @@
+<%- include('partials/header') %>
+<%- include('partials/sidebar') %>
+
+<div class="ml-64 p-8 w-full">
+
+    <div class="flex items-center justify-between mb-6">
+        <h1 class="text-3xl font-bold text-gray-800">Input Pembelian</h1>
+
+        <a href="/purchases"
+           class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">
+            Kembali
+        </a>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl shadow-md w-full max-w-xl">
+
+        <form action="/purchase/store" method="POST" class="space-y-4">
+
+            <!-- Produk -->
+            <div>
+                <label class="block mb-2 font-semibold text-gray-700">
+                    Pilih Produk
+                </label>
+
+                <select name="product_id"
+                        class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        required>
+
+                    <option value="">-- Pilih Produk --</option>
+
+                    <% products.forEach(p => { %>
+                        <option value="<%= p.id %>">
+                            <%= p.nama_produk %> - Rp <%= p.harga %>
+                        </option>
+                    <% }) %>
+
+                </select>
+            </div>
+
+            <!-- Qty -->
+            <div>
+                <label class="block mb-2 font-semibold text-gray-700">
+                    Qty
+                </label>
+
+                <input type="number"
+                       name="qty"
+                       min="1"
+                       class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                       placeholder="Masukkan jumlah"
+                       required>
+            </div>
+
+            <!-- Button -->
+            <button type="submit"
+                    class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">
+                Simpan Pembelian
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<%- include('partials/footer') %>

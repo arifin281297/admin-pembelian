@@ -1,0 +1,57 @@
+<%- include('partials/header') %>
+<%- include('partials/sidebar') %>
+
+<div class="ml-64 p-8 w-full">
+
+    <h1 class="text-3xl font-bold mb-6">Data Pembelian</h1>
+
+    <a href="/purchase/create" class="bg-green-500 text-white px-4 py-2 rounded">
+        + Input Pembelian
+    </a>
+
+    <div class="bg-white p-6 rounded-xl shadow mt-4">
+
+        <table class="w-full border">
+            <thead>
+                <tr class="bg-gray-100">
+                    <th class="border p-2">Invoice</th>
+                    <th class="border p-2">Produk</th>
+                    <th class="border p-2">Qty</th>
+                    <th class="border p-2">Total</th>
+                    <th class="border p-2">Status</th>
+                    <th class="border p-2">Aksi</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% purchases.forEach(p => { %>
+                <tr class="text-center">
+                    <td class="border p-2"><%= p.no_invoice %></td>
+                    <td class="border p-2"><%= p.nama_produk %></td>
+                    <td class="border p-2"><%= p.qty %></td>
+                    <td class="border p-2"><%= p.total_harga %></td>
+                    <td class="border p-2">
+                        <% if(p.status === 'ACTIVE'){ %>
+                            <span class="text-green-600 font-bold">ACTIVE</span>
+                        <% } else { %>
+                            <span class="text-red-600 font-bold">CANCELLED</span>
+                        <% } %>
+                    </td>
+                    <td class="border p-2">
+                        <% if(p.status === 'ACTIVE'){ %>
+                        <a href="/purchase/cancel/<%= p.id %>" class="text-red-500">
+                            Cancel
+                        </a>
+                        <% } %>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,49 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+<h1>Dashboard Admin Pembelian</h1>
+
+<a href="/products">Data Produk</a>
+<br><br>
+
+<a href="/purchases">Data Pembelian</a>
+
+</body>
+</html> -->
+
+<%- include('partials/header') %>
+<%- include('partials/sidebar') %>
+
+<div class="ml-64 p-8 w-full">
+
+    <h1 class="text-3xl font-bold mb-6">Dashboard</h1>
+
+    <div class="grid grid-cols-2 gap-6">
+
+        <a href="/products" class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
+            <h2 class="text-xl font-bold"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                 stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.089v6.5a2.25 2.25 0 0 1-2.25 2.25H4.5A2.25 2.25 0 0 1 2.25 17.1v-6.5c0-.96.616-1.805 1.5-2.089M20.25 8.511V6.75A2.25 2.25 0 0 0 18 4.5H6A2.25 2.25 0 0 0 3.75 6.75v1.761" />
+            </svg> Data Produk</h2>
+            <p class="text-gray-500">Kelola produk & stok</p>
+        </a>
+
+        <a href="/purchases" class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
+            <h2 class="text-xl font-bold"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                 stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M2.25 3h1.386a1.5 1.5 0 0 1 1.342.832l.548 1.096m0 0L7.5 14.25h9l1.98-7.304M5.526 4.928h14.61M7.5 14.25 6.75 18m12-3.75L17.25 18m-10.5 0h10.5" />
+            </svg> Pembelian</h2>
+            <p class="text-gray-500">Transaksi pembelian</p>
+        </a>
+
+    </div>
+
+</div>
+
+<%- include('partials/footer') %>
