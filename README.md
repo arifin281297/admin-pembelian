@@ -259,6 +259,6 @@ Penghubung URL dengan controller:
 ---
 
 
-# 👨‍💻 Author
+# Author
 
 **Ahmad Zainul Arifin**
